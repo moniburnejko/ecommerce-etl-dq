@@ -11,7 +11,7 @@ the etl stage prepares raw excel data for validation and reporting by cleaning, 
 | [`/queries`](queries) | main transformation logic. contains one query per dataset (`sales_q1`, `sales_q2`, `customers`, `products`, etc.) and a master query `sales_2023.pq` that merges and enriches all data. |
 
 ## data source
-the etl process loads all input data from a single raw excel file: [`/data/sample/sales_2023_database_raw.xlsx`](../data/sample/sales_2023_database_raw.xlsx)
+the etl process loads all input data from a single raw excel file: [`/data/sample/sales_2023_raw.xlsx`](../data/sample/sales_2023_raw.xlsx)
 
 the workbook contains the following worksheets: `sales_2023_q1`, `sales_2023_q2`, `customers`, `products`, `returns`, `fees`, `targets_wide`, `shipping`
 
