@@ -4,7 +4,7 @@ it describes the architecture, logical flow, and key components used to transfor
 
 ## overview
 the etl pipeline integrates multiple raw data sources - sales, customers, products, returns, shipping, fees, and sales targets - from a single excel file:  
-[`/data/sample/sales_2023_database_raw.xlsx`](../data/sample/sales_2023_database_raw.xlsx).  
+[`/data/sample/sales_2023_raw.xlsx`](../data/sample/sales_2023_raw.xlsx).  
 
 through a series of standardized transformations, these sources are cleaned, normalized, and merged into one consolidated dataset:  
 **`sales_2023`**, later validated in the [`/validation`](../validation).
@@ -41,7 +41,7 @@ flowchart TD
 |------------|-----------|-------------|
 | **etl functions** | [`/etl/functions`](./functions) | reusable m-language scripts for cleaning, parsing, and normalization (e.g., `fx_clean`, `fx_text`, `fx_number`, `fx_date`, `fx_package_size`, `fx_logical`). |
 | **etl queries** | [`/etl/queries`](./queries) | main transformation logic: imports, standardizes, joins, and enriches data from multiple source sheets into unified tables. |
-| **raw data** | [`/data/sample/sales_2023_database_raw.xlsx`](../data/sample/sales_2023_database_raw.xlsx) | input file containing multiple worksheets: `sales_2023_q1`, `sales_2023_q2`, `products`, `customers`, `returns`, `targets_wide`, `fees`, and `shipping`. |
+| **raw data** | [`/data/sample/sales_2023_raw.xlsx`](../data/sample/sales_2023_raw.xlsx) | input file containing multiple worksheets: `sales_2023_q1`, `sales_2023_q2`, `products`, `customers`, `returns`, `targets_wide`, `fees`, and `shipping`. |
 | **output dataset** | [`sales_2023`](./queries/sales_2023.pq) | final dataset joining sales transactions with product and customer dimensions, enriched with pricing, segmentation, and geographic data. |
 
 ## etl flow
