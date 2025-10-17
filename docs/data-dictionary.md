@@ -79,7 +79,7 @@ this document lists all tables and columns in the **e-commerce etl + dq** projec
 | `customer_city_ascii` | text | customer city (ascii) | Vienna |
 | `segment` | text | customer segment | Enterprise |
 | `vat` | text | tax id / vat | DE380004069 |
-| `joindate` | date | customer join date | 2018-11-01 |
+| `join_date` | date | customer join date | 2018-11-01 |
 
 ## shipping
 - role: **supporting**
