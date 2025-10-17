@@ -4,7 +4,7 @@ this document provides a concise overview of the **e-commerce etl + dq** project
 ## overview
 the project processes multi-source e-commerce data covering sales transactions, product data, customer profiles, fees, shipping, and returns.  
 all data originates from a single raw workbook:  
-[`/data/sample/sales_2023_database_raw.xlsx`](../data/sample/sales_2023_database_raw.xlsx)
+[`/data/sample/sales_2023_raw.xlsx`](../data/sample/sales_2023_raw.xlsx)
 
 the etl pipeline standardizes, merges, and enriches these datasets into a unified analytical model - `sales_2023` - later validated in the `/validation` stage.  
 
@@ -33,7 +33,7 @@ for a detailed explanation of the validation logic, see:
 - `dq_summary` - aggregated summary of all detected data quality issues by table, field, and severity  
 
 sample output:  
-[`/data/sample/sales_2023_validation_sample.xlsx`](../data/sample/sales_2023_validation_sample.xlsx)
+[`/data/sample/sales_2023_sample.xlsx`](../data/sample/sales_2023_sample.xlsx)
 
 ## project structure
 | folder | description |
