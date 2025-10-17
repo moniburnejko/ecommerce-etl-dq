@@ -1,12 +1,12 @@
 // query: targets
-// source: /data/sales_2023_database_raw.xlsx [Targets_Wide sheet]
+// source: /data/sample/sales_2023_raw.xlsx [Targets_Wide sheet]
 // purpose: transform wide-format sales targets into a tidy structure, converting month columns to rows and parsing numeric target values
 // notes: derives month_number from month name, adds ascii helper for salesperson, and ensures correct data typing
 // author: Monika Burnejko | 2025
 
 let
     // source & headers
-    source = Excel.Workbook(File.Contents("data/sales_2023_database_raw.xlsx"), null, true),
+    source = Excel.Workbook(File.Contents("data/sample/sales_2023_raw.xlsx"), null, true),
     nav = source{[Item = "Targets_Wide", Kind = "Sheet"]}[Data],
     headers = Table.PromoteHeaders(nav, [PromoteAllScalars = true]),
 
