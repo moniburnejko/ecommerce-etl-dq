@@ -1,1 +1,8 @@
-
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 discussions
+    url: https://github.com/moniburnejko/ecommerce-etl-dq/discussions
+    about: use discussions for general questions, ideas, or feedback
+  - name: 📚 documentation
+    url: https://github.com/moniburnejko/ecommerce-etl-dq/tree/main/docs
+    about: refer to documentation for etl and validation walkthroughs
