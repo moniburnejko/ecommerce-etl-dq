@@ -25,10 +25,10 @@ other tables such as `returns`, `shipping`, `fees`, and `targets` remain separat
 - **`customers`** - one row per **customer** (`customer_id`)  
 
 ### supporting tables
-- **`returns`** — one row per **return** (`return_id`), linked to an `order_id`  
-- **`shipping`** — one row per **order_id**, containing delivery information  
-- **`fees`** — one row per **channel and country**, defining local fee rules (currently Poland only)  
-- **`targets`** — one row per **salesperson and month**, representing sales goals  
+- **`returns`** - one row per **return** (`return_id`), linked to an `order_id`  
+- **`shipping`** - one row per **order_id**, containing delivery information  
+- **`fees`** - one row per **channel and country**, defining local fee rules (currently Poland only)  
+- **`targets`** - one row per **salesperson and month**, representing sales goals  
 
 > note: supporting tables are stored separately to keep the main fact table compact and to reflect their unique level of detail (for example, `targets` is monthly, while `sales_2023` is daily).
 
