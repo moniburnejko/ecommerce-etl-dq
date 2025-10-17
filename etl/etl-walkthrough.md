@@ -60,7 +60,7 @@ the final output, `sales_2023`, is then passed to the validation stage (`/valida
   - normalizes emails (`lowercase` + `fx_diacritics`)  
   - standardizes phone numbers (digits + one `+` allowed)  
   - standardizes country names via `fx_country`  
-  - parses `joindate` using `fx_date`  
+  - parses `join_date` using `fx_date`  
   - adds ascii helper columns (`customer_name_ascii`, `customer_city_ascii`)  
   - removes full-row duplicates  
 - **output:** clean, standardized customer dimension table.
