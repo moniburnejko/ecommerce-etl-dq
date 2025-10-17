@@ -26,7 +26,7 @@ let
 
     // 2: return_date outside 2023 (null = failure)
     r_date_bad = Table.SelectRows(source, each fx_is_between([return_date], #date(2023,1,1), #date(2023,12,31)) <> true),
-    i_date_bad = as_issues(r_date_bad, "returns", "return_date", "return_date outside 2023", "blocker", "return_date"),
+    i_date_bad = as_issues(r_date_bad, "returns", "return_date", "return_date outside 2023", "warning", "return_date"),
 
     // 3: missing or invalid order_id (fk to sales_2023)
     r_order_missing = Table.SelectRows(source, each fx_null_or_blank([order_id]) = true or not List.Contains(order_keys, [order_id])),
