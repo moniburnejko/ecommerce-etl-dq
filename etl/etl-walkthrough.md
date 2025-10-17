@@ -12,7 +12,7 @@ the final output, `sales_2023`, is then passed to the validation stage (`/valida
 > for full m-code scripts, see [`/etl/queries`](./queries)
 
 ### 1. sales_q1
-- **source:** `sales_2023_q1` sheet from `sales_2023_database_raw.xlsx`  
+- **source:** `sales_2023_q1` sheet from `sales_2023_raw.xlsx`  
 - **purpose:** cleans and standardizes q1 sales transactions.  
 - **key operations:**
   - cleans headers and trims text using `fx_clean`  
