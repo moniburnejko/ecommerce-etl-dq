@@ -8,7 +8,9 @@ validation ensures referential integrity, logical accuracy, completeness, and co
 
 validation outputs two main results:
 - `dq_*` queries - table-level validation results  
-- `dq_summary` - combined summary of validation findings across all datasets  
+- `dq_summary` - combined summary of validation findings across all datasets
+
+sample outputs are stored in `/data/sample/sales_2023_sample.xlsx`.
 
 ## validation components
 | component | location | description |
