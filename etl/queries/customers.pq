@@ -16,7 +16,7 @@ let
     // rename columns
     renamed = Table.RenameColumns(clean,
         {{"customerid","customer_id"}, {"customername","customer_name"},
-         {"country","customer_country"}, {"city","customer_city"}}),
+         {"country","customer_country"}, {"city","customer_city"}, {"joindate", "join_date"}),
 
     // standardize text columns
     text_fixed = Table.TransformColumns(renamed, 
@@ -46,7 +46,7 @@ let
     country_fixed = Table.TransformColumns(phone_norm, {{"customer_country", each fx_country(_), type text}}),
 
     // date standardization
-    date_fixed = Table.TransformColumns(country_fixed, {{"joindate", each fx_date(_), type date}}),
+    date_fixed = Table.TransformColumns(country_fixed, {{"join_date", each fx_date(_), type date}}),
 
     // add ascii helper columns
     add_ascii = Table.AddColumn(date_fixed, "customer_name_ascii", each fx_diacritics([customer_name]), type text),
@@ -56,7 +56,7 @@ let
     reordered = Table.ReorderColumns(add_ascii_city,
         {"customer_id","customer_name","customer_name_ascii","email","phone",
          "customer_country","customer_city","customer_city_ascii",
-         "segment","vat","joindate"}),
+         "segment","vat","join_date"}),
 
     // deduplicate full rows
     deduped = Table.Distinct(reordered)
