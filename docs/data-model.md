@@ -5,9 +5,14 @@ other tables such as `returns`, `shipping`, `fees`, and `targets` remain separat
 
 - **type:** hybrid star (with a lightly denormalized fact table)  
 - **tables:** 7 (1 fact, 2 dimensions, 4 supporting)  
-- **total records:** ~1,500  
+- **total records:** ~1,500
 
-![data model diagram](./data-model-diagram.png)
+## relationships diagram
+<p align="center">
+  <a href="./data-model-diagram.png">
+    <img src="./data-model-diagram.png" width="700"/>
+  </a>
+</p>
 
 ## table roles & grain
 ### fact table
