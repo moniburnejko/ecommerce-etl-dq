@@ -46,7 +46,7 @@ flowchart TD
 
 ## etl flow
 1. **source loading**  
-   - imports all worksheets from `sales_2023_database_raw.xlsx`  
+   - imports all worksheets from `sales_2023_raw.xlsx`  
    - uses `fx_clean` to trim whitespace and standardize column naming (`snake_case`)
 
 2. **cleaning & normalization**  
