@@ -1,5 +1,5 @@
 # validation walkthrough
-this document describes the complete data quality (dq) validation process applied after the etl stage in the **ecommerce etl + dq** project.  
+this document describes the complete data quality (dq) validation process applied after the etl stage in the **e-commerce etl + dq** project.  
 it explains how validation rules are defined, executed, and aggregated across all business entities.
 
 ## overview
