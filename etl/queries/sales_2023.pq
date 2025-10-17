@@ -35,7 +35,7 @@ let
     // reorder columns
     final = Table.ReorderColumns(add_order_city_ascii,
         {"order_id","order_date","customer_id","customer_name","customer_name_ascii","email","phone",
-         "customer_country","customer_city","customer_city_ascii",
+         "customer_country","customer_city","customer_city_ascii", "segment",
          "product_sku","product_name","category","subcategory","unit_cost",
          "quantity","unit_price","sales_amount","currency",
          "order_country","order_city","order_city_ascii",
