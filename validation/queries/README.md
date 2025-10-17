@@ -1,5 +1,5 @@
 # validation queries
-this folder contains all power query (m language) scripts used in the data validation stage of the **ecommerce etl + dq** project.  
+this folder contains all power query (m language) scripts used in the data validation stage of the **e-commerce etl + dq** project.  
 each query applies or summarizes data quality rules defined in `/validation/functions` and `/validation/validation-rules.md`.
 
 ## contents
