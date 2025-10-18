@@ -2,9 +2,9 @@
 this document provides a concise overview of the **e-commerce etl + dq** project - an end-to-end data pipeline that transforms and validates sales data using **power query m**.
 
 ## overview
-the project processes multi-source e-commerce data covering sales transactions, product data, customer profiles, fees, shipping, and returns.  
-all data originates from a single raw workbook:  
-[`/data/sample/sales_2023_raw.xlsx`](../data/sample/sales_2023_raw.xlsx)
+the project processes multi-source e-commerce data covering sales transactions, product data, customer profiles, fees, shipping, and returns. all data comes from one raw workbook: `sales_2023_raw.xlsx`.      
+
+sample input file available in: [`/data/sample/sales_2023_raw_sample.xlsx`](../data/sample/sales_2023_raw_sample.xlsx).
 
 the etl pipeline standardizes, merges, and enriches these datasets into a unified analytical model - `sales_2023` - later validated in the `/validation` stage.  
 
