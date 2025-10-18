@@ -2,7 +2,7 @@
 // source: /data/sample/sales_2023_raw.xlsx [Fees sheet]
 // purpose: clean and standardize sales fee data including channel, country, fee_type, and fee_value fields
 // notes: applies fx_country, fx_number, and fx_text functions, enforces schema consistency, and deduplicates by channel-country-fee_type
-// author: Monika Burnejko | 2025
+// author: monika burnejko | 2025
 
 let
     // source & headers
