@@ -2,7 +2,7 @@
 // source: sales_2023_q1, sales_2023_q2, products, customers
 // purpose: merge quarterly sales datasets into a single unified table, enrich with product and customer attributes, and calculate sales_amount
 // notes: removes duplicates by order_id and ensures referential integrity through left joins; used as the main fact table for analytics and dq validation
-// author: Monika Burnejko | 2025
+// author: monika burnejko | 2025
 
 let
     // source
