@@ -16,7 +16,7 @@ each query transforms, standardizes, and prepares one dataset that contributes t
 | **shipping.pq** | parses combined shipping info (carrier, delivery type, estimated delivery days) and normalizes cost data. |
 
 ## integration flow
-1. each raw sheet from `/data/sample/sales_2023_raw.xlsx` is imported individually  
+1. each raw sheet from `sales_2023_raw.xlsx` is imported individually  
 2. transformations are applied using reusable etl functions (`fx_clean`, `fx_text`, `fx_number`, `fx_date`, etc.)  
 3. all tables are cleaned and conformed to a consistent schema  
 4. `sales_2023.pq` merges q1 and q2, adds computed metrics (`sales_amount`) and joins reference data  
