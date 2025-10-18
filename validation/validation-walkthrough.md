@@ -10,8 +10,6 @@ validation outputs two main results:
 - `dq_*` queries - table-level validation results  
 - `dq_summary` - combined summary of validation findings across all datasets
 
-sample outputs are stored in `/data/sample/sales_2023_sample.xlsx`.
-
 ## validation components
 | component | location | description |
 |------------|-----------|-------------|
@@ -61,6 +59,28 @@ sample outputs are stored in `/data/sample/sales_2023_sample.xlsx`.
 ## rule definitions
 all dq rules are defined in detail in:  
 ➡️ [`validation-rules.md`](./validation-rules.md)
+
+## validation demo output
+to demonstrate how the data quality layer operates, a small synthetic demo output is included in
+[`/data/sample/sales_2023_final_sample.xlsx`](./data/sample/sales_2023_final_sample.xlsx). → sheet: `dq_sales_2023_demo`.
+
+this sample contains intentionally created validation issues to illustrate the rules defined in [`/validation/queries/dq_sales_2023.pq`.](./queries/dq_sales_2023.pq)
+
+example records include:
+- missing or blank order_id (tested with fx_null_or_blank)
+- invalid currency value (GBP → fails fx_in_set)
+- negative numeric field (unit_price < 0)
+- logical inconsistency (return_date < order_date in the returns table)
+- non-matching foreign keys (product_sku or customer_id not found in reference tables)
+
+the demo output shows how each validation rule is applied, categorized by:
+- field - column under validation
+- rule - short description of the condition
+- severity - either blocker or warning
+- value - the specific invalid entry
+- row_key - unique record reference (order_id or return_id)
+
+> this example helps visualize the data quality workflow even when real data produces few or no issues - proving that all rules and functions are active and functioning as intended.
 
 ## related documentation
 - [/validation/functions/](./functions) - reusable validation helpers  
