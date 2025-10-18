@@ -1,4 +1,5 @@
 # excel + power query
+# e-commerce etl + dq
 # portfolio / data analytics project
 
 # excel temporary and cache files
@@ -20,30 +21,25 @@
 *.pqdata
 *.pqoutput
 
-# data sources
-# ignore all standard data formats
+# data files (power query / excel)
+# ignore all raw and processed data files
+/data/*
+
+# keep documentation and sample subfolder
+!/data/README.md
+!/data/sample/
+!/data/sample/**
+
+# ignore large file types globally
 *.csv
 *.tsv
-*.xlsx
 *.xls
+*.xlsx
 *.ods
 *.json
 *.xml
 
-# ignore all data folders
-/data/*
-
-# allow sample datasets only
-!/data/sample/
-!/data/sample/**
-
-# exclude large compressed files
-*.zip
-*.rar
-*.7z
-*.gz
-
-# editor & environment files
+# editor & environment files 
 .vscode/
 .idea/
 *.suo
@@ -70,3 +66,14 @@ $RECYCLE.BIN/
 # personal notes
 notes.txt
 todo.txt
+draft.md
+
+# logs / exports / temporary outputs
+/exports/
+/output/
+/temp/
+/logs/
+
+# keep everything in /.github/
+!/.github/
+!/.github/**
