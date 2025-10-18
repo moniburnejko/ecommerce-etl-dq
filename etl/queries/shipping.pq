@@ -1,12 +1,12 @@
 // query: shipping
-// source: /data/sample/sales_2023_raw.xlsx [Shipping sheet]
+// source: /data/sales_2023_raw.xlsx [Shipping sheet]
 // purpose: clean and standardize shipping records, split composite fields, and validate delivery cost and estimated time
 // notes: splits shippinginfo into carrier, delivery_type, and estimated_delivery_days; standardizes text and numeric values
-// author: Monika Burnejko | 2025
+// author: monika burnejko | 2025
 
 let
     // source & headers
-    source = Excel.Workbook(File.Contents("data/sample/sales_2023_raw.xlsx"), null, true),
+    source = Excel.Workbook(File.Contents("data/sales_2023_raw.xlsx"), null, true),
     nav = source{[Item = "Shipping", Kind = "Sheet"]}[Data],
     headers = Table.PromoteHeaders(nav, [PromoteAllScalars = true]),
 
