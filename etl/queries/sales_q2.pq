@@ -2,7 +2,7 @@
 // source: /data/sample/sales_2023_raw.xlsx [Sales_2023_Q2 sheet]
 // purpose: clean and standardize q2 transactional data, align schema with q1 dataset for later merging
 // notes: applies text, numeric, date, and country standardization, and adds ascii helper for salesperson
-// author: Monika Burnejko | 2025
+// author: monika burnejko | 2025
 
 let
     // source & headers
