@@ -2,11 +2,11 @@
 // source: /data/sample/sales_2023_raw.xlsx [Returns sheet]
 // purpose: clean and standardize product return records, including return dates, linked order id, and reason codes
 // notes: applies fx_date and fx_text normalization, renames columns, and removes duplicates by return_id
-// author: Monika Burnejko | 2025
+// author: monika burnejko | 2025
 
 let
     // source & headers
-    source = Excel.Workbook(File.Contents("data/sample/sales_2023_raw.xlsx"), null, true),
+    source = Excel.Workbook(File.Contents("data/sales_2023_raw.xlsx"), null, true),
     nav = source{[Item = "Returns", Kind = "Sheet"]}[Data],
     headers = Table.PromoteHeaders(nav, [PromoteAllScalars = true]),
 
