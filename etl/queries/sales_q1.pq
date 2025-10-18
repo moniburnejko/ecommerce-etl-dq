@@ -2,7 +2,7 @@
 // source: /data/sample/sales_2023_raw.xlsx [Sales_2023_Q1 sheet]
 // purpose: clean and standardize q1 transactional data, normalize column names, data types, and ensure consistency across key fields
 // notes: used as base input for sales_2023; applies text, numeric, date, and country standardization
-// author: Monika Burnejko | 2025
+// author: monika burnejko | 2025
 
 let
     // source & headers
