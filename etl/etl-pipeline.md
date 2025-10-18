@@ -3,11 +3,9 @@ this document provides a high-level overview of the power query etl (extract-tra
 it describes the architecture, logical flow, and key components used to transform fragmented e-commerce operational data into a unified analytics-ready dataset.
 
 ## overview
-the etl pipeline integrates multiple raw data sources - sales, customers, products, returns, shipping, fees, and sales targets - from a single excel file:  
-[`/data/sample/sales_2023_raw.xlsx`](../data/sample/sales_2023_raw.xlsx).  
+the etl pipeline integrates multiple raw data sources - sales, customers, products, returns, shipping, fees, and sales targets - from a single excel file: `sales_2023_raw.xlsx`.
 
-through a series of standardized transformations, these sources are cleaned, normalized, and merged into one consolidated dataset:  
-**`sales_2023`**, later validated in the [`/validation`](../validation).
+through a series of standardized transformations, these sources are cleaned, normalized, and merged into one consolidated dataset: `sales_2023`, later validated in the [`/validation`](../validation).
 
 ## etl architecture
 ```mermaid
@@ -46,7 +44,7 @@ flowchart TD
 | **sample output** | [`/data/sample/sales_2023_final_sample.xlsx`](./data/sample/sales_2023_final_sample.xlsx) | the same subset after etl + validation, used to show final, standardized output. |
 
 notes:
-- the full raw file is excluded from version control for privacy and size reasons (`.gitignore`).   
+- the full raw file is excluded from version control for privacy and size reasons (.gitignore).   
 - samples are designed for documentation, reproducibility, and quick testing of queries without large files.
 - when following this walkthrough without the private raw file, use the two sample files to verify each step on a smaller dataset.
 
