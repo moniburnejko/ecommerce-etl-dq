@@ -35,7 +35,7 @@ the results are combined into `dq_summary`, which aggregates all detected issues
 ## outputs
 - record-level dq tables: `dq_sales_2023`, `dq_products`, `dq_customers`, `dq_returns`, `dq_shipping`, `dq_targets`, `dq_fees`
 - aggregated dq summary: `dq_summary`
-- example outputs are available in `/data/sample/sales_2023_sample.xlsx`
+- sample outputs are available in [`/data/sample/sales_2023_final_sample.xlsx`](../data/sample/sales_2023_final_sample.xlsx).
 
 ## notes
 - dq logic is modular and can be easily extended with new rules or entities.  
