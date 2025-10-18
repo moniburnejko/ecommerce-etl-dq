@@ -1,12 +1,12 @@
 // query: customers
-// source: /data/sample/sales_2023_raw.xlsx [Customers sheet]
+// source: /data/sales_2023_raw.xlsx [Customers sheet]
 // purpose: clean and standardize customer master data including id, contact info, location, and join dates
 // notes: normalizes email and phone formats, applies fx_country and fx_diacritics, and adds ascii helper columns
 // author: monika burnejko | 2025
 
 let
     // source & headers
-    source = Excel.Workbook(File.Contents("data/sample/sales_2023_raw.xlsx"), null, true),
+    source = Excel.Workbook(File.Contents("data/sales_2023_raw.xlsx"), null, true),
     nav = source{[Item = "Customers", Kind = "Sheet"]}[Data],
     headers = Table.PromoteHeaders(nav, [PromoteAllScalars = true]),
 
