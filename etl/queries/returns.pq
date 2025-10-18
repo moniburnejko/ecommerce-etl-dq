@@ -1,5 +1,5 @@
 // query: returns
-// source: /data/sample/sales_2023_raw.xlsx [Returns sheet]
+// source: /data/sales_2023_raw.xlsx [Returns sheet]
 // purpose: clean and standardize product return records, including return dates, linked order id, and reason codes
 // notes: applies fx_date and fx_text normalization, renames columns, and removes duplicates by return_id
 // author: monika burnejko | 2025
