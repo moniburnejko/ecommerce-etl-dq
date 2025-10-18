@@ -11,9 +11,9 @@ the etl stage prepares raw excel data for validation and reporting by cleaning, 
 | [`/queries`](queries) | main transformation logic. contains one query per dataset (`sales_q1`, `sales_q2`, `customers`, `products`, etc.) and a master query `sales_2023.pq` that merges and enriches all data. |
 
 ## data source
-the etl process loads all input data from a single raw excel file: [`/data/sample/sales_2023_raw.xlsx`](../data/sample/sales_2023_raw.xlsx)
-
-the workbook contains the following worksheets: `sales_2023_q1`, `sales_2023_q2`, `customers`, `products`, `returns`, `fees`, `targets_wide`, `shipping`
+- the etl process loads all input data from a single raw excel file: `sales_2023_raw.xlsx`.
+- the workbook contains the following worksheets: `sales_2023_q1`, `sales_2023_q2`, `customers`, `products`, `returns`, `fees`, `targets_wide`, `shipping`.
+- sample input file available in: [`/data/sample/sales_2023_raw_sample.xlsx`](../data/sample/sales_2023_raw_sample.xlsx)
 
 ## output datasets
 | dataset | description |
@@ -24,7 +24,7 @@ the workbook contains the following worksheets: `sales_2023_q1`, `sales_2023_q2`
 
 all output tables are later validated in the [`/validation`](../validation) stage, where dq checks (`dq_sales_2023`, `dq_products`, `dq_customers`, etc.) assess completeness, consistency, and referential integrity.  
 
-sample outputs are available in [`/data/sample/sales_2023_sample.xlsx`](../data/sample/sales_2023_sample.xlsx).
+sample outputs are available in [`/data/sample/sales_2023_final_sample.xlsx`](../data/sample/sales_2023_final_sample.xlsx).
 
 ## process summary
 1. **extract** - load and promote headers from all worksheets using `fx_clean`.  
