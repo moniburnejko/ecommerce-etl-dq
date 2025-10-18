@@ -16,7 +16,7 @@ let
     // rename columns
     renamed = Table.RenameColumns(clean,
         {{"customerid","customer_id"}, {"customername","customer_name"},
-         {"country","customer_country"}, {"city","customer_city"}, {"joindate", "join_date"}),
+         {"country","customer_country"}, {"city","customer_city"}, {"joindate", "join_date"}}),
 
     // standardize text columns
     text_fixed = Table.TransformColumns(renamed, 
