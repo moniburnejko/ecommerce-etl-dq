@@ -2,7 +2,7 @@
 // source: /data/sample/sales_2023_raw.xlsx [Customers sheet]
 // purpose: clean and standardize customer master data including id, contact info, location, and join dates
 // notes: normalizes email and phone formats, applies fx_country and fx_diacritics, and adds ascii helper columns
-// author: Monika Burnejko | 2025
+// author: monika burnejko | 2025
 
 let
     // source & headers
