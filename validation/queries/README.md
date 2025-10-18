@@ -24,7 +24,6 @@ each query applies or summarizes data quality rules defined in `/validation/func
 - each dq_* query outputs issues in a consistent format with columns:  
   `row_key`, `value`, `table_name`, `field`, `rule`, and `severity`.  
 - `dq_summary` serves as the main reporting dataset for data quality dashboards.  
-- sample inputs and aggregated validation outputs are available in `/data/sample/`.
 
 📅 *last updated: october 2025*  
 👩‍💻 *author: Monika Burnejko*
