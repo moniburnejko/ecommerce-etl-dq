@@ -1,12 +1,12 @@
 // query: sales_2023_q2
-// source: /data/sample/sales_2023_raw.xlsx [Sales_2023_Q2 sheet]
+// source: /data/sales_2023_raw.xlsx [Sales_2023_Q2 sheet]
 // purpose: clean and standardize q2 transactional data, align schema with q1 dataset for later merging
 // notes: applies text, numeric, date, and country standardization, and adds ascii helper for salesperson
 // author: monika burnejko | 2025
 
 let
     // source & headers
-    source = Excel.Workbook(File.Contents("data/sample/sales_2023_raw.xlsx"), null, true),
+    source = Excel.Workbook(File.Contents("data/sales_2023_raw.xlsx"), null, true),
     nav = source{[Item = "Sales_2023_Q2", Kind = "Sheet"]}[Data],
     headers = Table.PromoteHeaders(nav, [PromoteAllScalars = true]),
 
