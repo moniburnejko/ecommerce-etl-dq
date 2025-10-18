@@ -34,9 +34,10 @@ let
     text_cols = {"order_id","customer_id","product_sku","order_city","salesperson","channel"},
     text_fixed  = Table.TransformColumns(country_fixed, List.Transform(text_cols, (c) => {c, each fx_text(_), type text})),
     curr = Table.TransformColumns(text_fixed, {"currency", each fx_text(_, "upper"), type text}),
+    salesperson_clean = Table.TransformColumns(curr, {"salesperson", each if _ = "-" or _ = "–" then null else _}),
 
     // add ascii helper column for salesperson
-    add_salesperson_ascii = Table.AddColumn(curr, "salesperson_ascii", each fx_diacritics([salesperson]), type text),
+    add_salesperson_ascii = Table.AddColumn(salesperson_clean, "salesperson_ascii", each fx_diacritics([salesperson]), type text),
 
     // reorder columns
     reordered = Table.ReorderColumns(add_salesperson_ascii,
