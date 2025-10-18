@@ -12,28 +12,28 @@ through a series of standardized transformations, these sources are cleaned, nor
 ## etl architecture
 ```mermaid
 flowchart TD
-  A[sales_2023_q1]
-  B[sales_2023_q2]
-  C[products]
-  D[customers]
-  E[returns]
-  F[targets]
-  G[fee]
-  H[shipping]
-  I[sales_2023]
-  J[dq_* tables]
-  K[dq_summary]
+  A[sales_q1 & sales_q2]
+  B[products]
+  C[customers]
+  D[returns]
+  E[fees]
+  F[shipping]
+  G[targets]
+  H[sales_2023]
+  I[dq_sales_2023]
+  J[dq_summary]
 
-  A --> I
+  A --> H
+  B --> H
+  C --> H
   B --> I
   C --> I
   D --> I
+  E --> I
+  F --> I
+  G --> I
+  H --> I
   I --> J
-  E --> J
-  F --> J
-  G --> J
-  H --> J
-  J --> K
 ```
 
 ## etl logic components
@@ -41,8 +41,14 @@ flowchart TD
 |------------|-----------|-------------|
 | **etl functions** | [`/etl/functions`](./functions) | reusable m-language scripts for cleaning, parsing, and normalization (e.g., `fx_clean`, `fx_text`, `fx_number`, `fx_date`, `fx_package_size`, `fx_logical`). |
 | **etl queries** | [`/etl/queries`](./queries) | main transformation logic: imports, standardizes, joins, and enriches data from multiple source sheets into unified tables. |
-| **raw data** | [`/data/sample/sales_2023_raw.xlsx`](../data/sample/sales_2023_raw.xlsx) | input file containing multiple worksheets: `sales_2023_q1`, `sales_2023_q2`, `products`, `customers`, `returns`, `targets_wide`, `fees`, and `shipping`. |
-| **output dataset** | [`sales_2023`](./queries/sales_2023.pq) | final dataset joining sales transactions with product and customer dimensions, enriched with pricing, segmentation, and geographic data. |
+| **full raw input** | [`/data/sales_2023_raw.xlsx`](./data/sales_2023_raw.xlsx) | used as the primary source for all etl queries. |
+| **sample raw input** | [`/data/sample/sales_2023_raw_sample.xlsx`](./data/sample/sales_2023_raw_sample.xlsx) | subset of ~30 rows from the raw file, used to illustrate pre-etl inconsistencies. |
+| **sample output** | [`/data/sample/sales_2023_final_sample.xlsx`](./data/sample/sales_2023_final_sample.xlsx) | the same subset after etl + validation, used to show final, standardized output. |
+
+notes:
+- the full raw file is excluded from version control for privacy and size reasons (`.gitignore`).   
+- samples are designed for documentation, reproducibility, and quick testing of queries without large files.
+- when following this walkthrough without the private raw file, use the two sample files to verify each step on a smaller dataset.
 
 ## etl flow
 1. **source loading**  
@@ -86,7 +92,7 @@ flowchart TD
 | **dq_summary** | aggregated summary of data validation results, including record counts and severity-based issue breakdowns. |
 
 sample outputs are available in:  
-[`/data/sample/sales_2023_sample.xlsx`](../data/sample/sales_2023_sample.xlsx)
+[`/data/sample/sales_2023_fina_sample.xlsx`](../data/sample/sales_2023_final_sample.xlsx)
 
 ## related documentation
 - [**etl-walkthrough**](./etl-walkthrough.md) - step-by-step explanation of each transformation stage  
