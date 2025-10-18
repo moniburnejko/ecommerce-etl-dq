@@ -2,7 +2,7 @@
 // source: /data/sample/sales_2023_raw.xlsx [Products sheet]
 // purpose: clean and standardize product master data, validate numeric cost fields, and parse package size into structured components
 // notes: expands fx_package_size into separate columns (pack_count, quantity, unit) and normalizes product_name formatting
-// author: Monika Burnejko | 2025
+// author: monika burnejko | 2025
 
 let
     // source & headers
