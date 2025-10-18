@@ -1,12 +1,12 @@
 // query: products
-// source: /data/sample/sales_2023_raw.xlsx [Products sheet]
+// source: /data/sales_2023_raw.xlsx [Products sheet]
 // purpose: clean and standardize product master data, validate numeric cost fields, and parse package size into structured components
 // notes: expands fx_package_size into separate columns (pack_count, quantity, unit) and normalizes product_name formatting
 // author: monika burnejko | 2025
 
 let
     // source & headers
-    source = Excel.Workbook(File.Contents("data/sample/sales_2023_raw.xlsx"), null, true),
+    source = Excel.Workbook(File.Contents("data/sales_2023_raw.xlsx"), null, true),
     nav = source{[Item = "Products", Kind = "Sheet"]}[Data],
     headers = Table.PromoteHeaders(nav, [PromoteAllScalars = true]),
 
