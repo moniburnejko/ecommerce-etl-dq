@@ -1,12 +1,12 @@
 // query: sales_2023_q1
-// source: /data/sample/sales_2023_raw.xlsx [Sales_2023_Q1 sheet]
+// source: /data/sales_2023_raw.xlsx [Sales_2023_Q1 sheet]
 // purpose: clean and standardize q1 transactional data, normalize column names, data types, and ensure consistency across key fields
 // notes: used as base input for sales_2023; applies text, numeric, date, and country standardization
 // author: monika burnejko | 2025
 
 let
     // source & headers
-    source = Excel.Workbook(File.Contents("data/sample/sales_2023_raw.xlsx"), null, true),
+    source = Excel.Workbook(File.Contents("data/sales_2023_raw.xlsx"), null, true),
     nav = source{[Item = "Sales_2023_Q1", Kind = "Sheet"]}[Data],
     headers = Table.PromoteHeaders(nav, [PromoteAllScalars = true]),
 
