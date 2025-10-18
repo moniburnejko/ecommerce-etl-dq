@@ -4,9 +4,18 @@ it covers each transformation query, its logic, and how the final dataset `sales
 
 ## overview
 the etl process transforms raw, fragmented operational data from multiple e-commerce sheets into a clean and analytics-ready data model.  
-it begins with eight raw worksheets from one file - [`sales_2023_raw.xlsx`](../data/sample/sales_2023_raw.xlsx) - and ends with a unified dataset that integrates transactions, customers, products, fees, and shipping data.
-
+it begins with eight raw worksheets from one file - `sales_2023_raw.xlsx` - and ends with a unified dataset that integrates transactions, customers, products, fees, and shipping data.     
 the final output, `sales_2023`, is then passed to the validation stage (`/validation`), where data quality checks are performed.
+
+## data used in this walkthrough
+- **raw source (local):** `/data/sales_2023_raw.xlsx`  
+  sheets: `sales_2023_q1`, `sales_2023_q2`, `products`, `customers`, `returns`, `fees`, `shipping`, `targets`.
+  
+- **sample datasets (public):** `/data/sample/`
+  - [`sales_2023_raw_sample.xlsx`](./data/sample/sales_2023_raw_sample.xlsx)  - subset of ~30 rows from the raw file, used to illustrate pre-etl inconsistencies  
+  - [`sales_2023_final_sample.xlsx`](./data/sample/sales_2023_final_sample.xlsx) - the same subset after etl + validation, used to show final, standardized output
+
+>tip: when following this walkthrough without the private raw file, use the two sample files to verify each step on a smaller dataset.
 
 ## transformations by query
 > for full m-code scripts, see [`/etl/queries`](./queries)
