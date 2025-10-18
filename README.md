@@ -130,6 +130,8 @@ flowchart TD
   A --> H
   B --> H
   C --> H
+  B --> I
+  C --> I
   D --> I
   E --> I
   F --> I
