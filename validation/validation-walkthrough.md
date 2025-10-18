@@ -60,33 +60,25 @@ validation outputs two main results:
 all dq rules are defined in detail in:  
 ➡️ [`validation-rules.md`](./validation-rules.md)
 
-## validation demo output
-to demonstrate how the data quality layer operates, a small synthetic demo output is included in
-[`/data/sample/sales_2023_final_sample.xlsx`](./data/sample/sales_2023_final_sample.xlsx). → sheet: `dq_sales_2023_demo`.
+## sample outputs
+validation results are illustrated using synthetic demo data available in:
+[`/data/sample/sales_2023_final_sample.xlsx`](../data/sample/sales_2023_final_sample.xlsx)
 
-this sample contains intentionally created validation issues to illustrate the rules defined in [`/validation/queries/dq_sales_2023.pq`.](./queries/dq_sales_2023.pq)
+this file includes:
+- **`sales_2023`**, **`products`**, **`customers`**, and **`shipping`** sheets - show the post-etl, cleaned data structure.  
+- **`dq_sales_2023_demo`** - a record-level validation output table built with intentionally edited rows that *violate multiple dq rules* to demonstrate how validation logic responds.  
+- **`dq_summary_demo`** - an aggregated summary of the above, showing the count and percentage of invalid, valid, and warning-flagged records.
 
-example records include:
-- missing or blank order_id (tested with fx_null_or_blank)
-- invalid currency value (GBP → fails fx_in_set)
-- negative numeric field (unit_price < 0)
-- logical inconsistency (return_date < order_date in the returns table)
-- non-matching foreign keys (product_sku or customer_id not found in reference tables)
-
-the demo output shows how each validation rule is applied, categorized by:
-- field - column under validation
-- rule - short description of the condition
-- severity - either blocker or warning
-- value - the specific invalid entry
-- row_key - unique record reference (order_id or return_id)
-
-> this example helps visualize the data quality workflow even when real data produces few or no issues - proving that all rules and functions are active and functioning as intended.
+> **important:**       
+> both demo dq sheets (`dq_sales_2023_demo`, `dq_summary_demo`) are **not based on the actual validated dataset**.  
+> they contain **manually altered data** created purely for educational and presentation purposes - to visually demonstrate how the dq framework detects and reports validation issues.  
+> the real dq outputs in the project (`dq_sales_2023`, `dq_summary`) reflect correctly validated production data and are not shared publicly.
 
 ## related documentation
 - [/validation/functions/](./functions) - reusable validation helpers  
 - [/validation/queries/](./queries) - per-table dq logic and summary  
 - [/etl/etl-walkthrough.md](../etl/etl-walkthrough.md) - full etl process overview  
-- [/data/sample/](../data/sample/) - example outputs from validation and dq summary  
+- [sales_2023_final_sample.xlsx](../data/sample/sales_2023_final_sample.xlsx) - contains demo dq sheets for visualizing rule results  
 
 📅 *last updated: october 2025*  
 👩‍💻 *author: Monika Burnejko*
