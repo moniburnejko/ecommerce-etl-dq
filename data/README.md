@@ -21,7 +21,7 @@ it includes raw source data (kept locally) and public sample files showing befor
 - **purpose:** demonstrates the *before-etl* stage of the pipeline.  
 - **contains:**  
   - inconsistent headers, mixed casing, non-standard country names, nulls, and formatting errors  
-  - partial data from key tables: `Sales_Q1`, `Sales_Q2`, `Customers`, `Products`, `Returns`, `Fees`, `Shipping`, `Targets`  
+  - partial data from key tables: `sales_q1`, `sales_q2`, `customers`, `products`, `returns`, `fees`, `shipping`, `targets`  
 - **use case:** to visualize data quality issues and understand initial cleaning requirements.
 
 ### sales_2023_final_sample.xlsx
@@ -30,12 +30,13 @@ it includes raw source data (kept locally) and public sample files showing befor
   - standardized and validated versions of all columns  
   - unified naming conventions (snake_case)  
   - consistent numeric and date formatting  
-  - resolved lookups (joined `Products`, `Customers`, and supporting tables)  
+  - resolved lookups (joined `products`, `customers`)  
   - sheet **`dq_sales_2023_demo`** with example validation output  
-- **use case:** to demonstrate the outcome of the etl + dq pipeline and provide a before/after comparison.
+    *(the data in this sheet was created intentionally to showcase the validation process and demonstrate how data quality rules are applied - even when the real dataset has few or no issues)*
+  - **use case:** to demonstrate the outcome of the etl + dq pipeline and provide a before/after comparison.
 
 ## usage notes
-- raw data files are **excluded from git tracking** via `.gitignore` for privacy and storage optimization.  
+- raw data files are **excluded from git tracking** via .gitignore for privacy and storage optimization.  
 - only **sample and final sample files** are versioned publicly to illustrate etl + validation workflows.  
 - all public examples are synthetic and safe sharing.
 
