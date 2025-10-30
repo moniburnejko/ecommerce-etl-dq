@@ -13,74 +13,16 @@ for a complete overview of the process and outputs, see ➡️ [etl-summary.md](
 ecommerce-etl-dq/
 │
 ├── 📁 etl/
-│   ├── etl-pipeline.md
-│   ├── etl-walkthrough.md
-│   ├── README.md
 │   ├── 📁 queries/
-│   │   ├── sales_2023.pq
-│   │   ├── sales_q1.pq
-│   │   ├── sales_q2.pq
-│   │   ├── customers.pq
-│   │   ├── products.pq
-│   │   ├── returns.pq
-│   │   ├── fees.pq
-│   │   ├── shipping.pq
-│   │   ├── targets.pq
-│   │   └── README.md
 │   └── 📁 functions/
-│       ├── fx_clean.pq
-│       ├── fx_text.pq
-│       ├── fx_number.pq
-│       ├── fx_date.pq
-│       ├── fx_logical.pq
-│       ├── fx_package_size.pq
-│       ├── fx_country.pq
-│       ├── fx_diacritics.pq
-│       └── README.md
-│
 ├── 📁 validation/
-│   ├── validation-walkthrough.md
-│   ├── validation-rules.md
-│   ├── README.md
 │   ├── 📁 queries/
-│   │   ├── dq_sales_2023.pq
-│   │   ├── dq_products.pq
-│   │   ├── dq_customers.pq
-│   │   ├── dq_returns.pq
-│   │   ├── dq_shipping.pq
-│   │   ├── dq_fees.pq
-│   │   ├── dq_targets.pq
-│   │   ├── dq_summary.pq
-│   │   └── README.md
 │   └── 📁 functions/
-│       ├── fx_null_or_blank.pq
-│       ├── fx_is_numeric.pq
-│       ├── fx_is_between.pq
-│       ├── fx_in_set.pq
-│       └── README.md
-│
 ├── 📁 data/
-│   ├── 📁 sample/
-│   │   ├── sales_2023_raw_sample.xlsx
-│   │   └── sales_2023_final_sample.xlsx
-│   ├── sales_2023_raw.xlsx
-│   └── README.md
-│
+│   └── 📁 sample/
 ├── 📁 docs/
-│   ├── etl-summary.md
-│   ├── data-dictionary.md
-│   ├── data-model.md
-│   ├── data-model-diagram.png
-│   └── README.md
-│
 ├── 📁 .github/
-│   ├── 📁 ISSUE_TEMPLATE/
-│   │   ├── bug_report.md
-│   │   ├── feature_request.md
-│   │   └── config.yml
-│   ├── pull_request_template.md
-│   └── contributing.md
-│
+│   └── 📁 ISSUE_TEMPLATE/
 ├── LICENSE
 ├── .gitignore
 └── README.md
