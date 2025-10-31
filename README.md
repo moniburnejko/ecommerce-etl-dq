@@ -122,7 +122,7 @@ this project is released under the **mit license**.
 ## connect
 👩‍💻 **Monika Burnejko**  
 *data analyst in training | excel & power query | data quality & etl*  
-📧 [monikaburnejko@gmail.com](mailto:monikaburnejko@gmail.com)  
+📧 [moniburnejko@gmail.com](mailto:moniburnejko@gmail.com)  
 💼 [linkedin](https://www.linkedin.com/in/monika-burnejko-9301a1357)  
 🌐 [portfolio](https://www.notion.so/monikaburnejko/Data-Analytics-Portfolio-2761bac67ca9807298aee038976f0085?pvs=9)
 
